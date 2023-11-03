@@ -5,11 +5,11 @@ displayTimer();
 
 function displayTimer() {
   const timerObject = getValue();
-  let i = timerObject.second;
-  let j = timerObject.minute;
-  let z = timerObject.hour;
-  let lap = JSON.parse(localStorage.getItem('lap')) || 0;
-  let displayLapHTML = localStorage.getItem('displayLap') || '';
+  const i = timerObject.second;
+  const j = timerObject.minute;
+  const z = timerObject.hour;
+  const lap = JSON.parse(localStorage.getItem('lap')) || 0;
+  const displayLapHTML = localStorage.getItem('displayLap') || '';
   const displayLapElement = document.querySelector('.js-display-lap');
 
   if (lap > 0) {
@@ -139,9 +139,9 @@ function resetLapTimer() {
   const displayLapElement = document.querySelector('.js-display-lap');
   let displayLapHTML = localStorage.getItem('displayLap') || '';
   const timerObject = getValue();
-  let i = timerObject.second;
-  let j = timerObject.minute;
-  let z = timerObject.hour;
+  const i = timerObject.second;
+  const j = timerObject.minute;
+  const z = timerObject.hour;
   let lap = JSON.parse(localStorage.getItem('lap')) || 0;
 
   if (lapElement.innerHTML === 'Lap') {
