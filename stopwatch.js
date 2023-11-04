@@ -120,8 +120,8 @@ function startCountUp() {
   }
 }
 
-function addRowLap(displayLapElement, lap, value) {
-  displayLapElement.innerHTML = `
+function addRowLap(lap, value) {
+  const displayLapHTML = `
     <div class="row-lap">
       <span>
         Lap ${lap}
@@ -131,7 +131,7 @@ function addRowLap(displayLapElement, lap, value) {
       </span>
     </div>
   `;
-  return displayLapElement.innerHTML;
+  return displayLapHTML;
 }
 
 function resetLapTime() {
@@ -149,24 +149,24 @@ function resetLapTime() {
       displayLapElement.classList.add('display-lap');
     if (i < 10 && j < 10) {
       if (z > 0)
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `${z}:0${j}:0${i}`);
+        displayLapHTML += addRowLap(++lap, `${z}:0${j}:0${i}`);
       else
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `0${j}:0${i}`);
+        displayLapHTML += addRowLap(++lap, `0${j}:0${i}`);
     } else if (i < 10 && j >= 10) {
       if (z > 0)
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `${z}:${j}:0${i}`);
+        displayLapHTML += addRowLap(++lap, `${z}:${j}:0${i}`);
       else
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `${j}:0${i}`);
+        displayLapHTML += addRowLap(++lap, `${j}:0${i}`);
     } else if (i >= 10 && j < 10) {
       if (z > 0)
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `${z}:0${j}:${i}`);
+        displayLapHTML += addRowLap(++lap, `${z}:0${j}:${i}`);
       else
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `0${j}:${i}`);
+        displayLapHTML += addRowLap(++lap, `0${j}:${i}`);
     } else {
       if (z > 0)
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `${z}:${j}:${i}`);
+        displayLapHTML += addRowLap(++lap, `${z}:${j}:${i}`);
       else
-        displayLapHTML += addRowLap(displayLapElement, ++lap, `${j}:${i}`);
+        displayLapHTML += addRowLap(++lap, `${j}:${i}`);
     }
     displayLapElement.innerHTML = displayLapHTML;
     localStorage.setItem('displayLap', displayLapHTML);
